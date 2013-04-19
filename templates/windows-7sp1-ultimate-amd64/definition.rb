@@ -21,13 +21,12 @@ Veewee::Session.declare({
     ],
 
 
-    :boot_wait => "1", #12 minutes.. should be long enough
+    :boot_wait => "720", #12 minutes.. should be long enough
     # this is waiting for the screene where we could put in our product key
     # this is the command sequence to bybass it and to not try to register once online
-    #:boot_cmd_sequence => [ 
-    #  '<Tab><Spacebar><Tab><Tab><Tab><Spacebar>'
-    #],
-    :boot_cmd_sequence => [''],
+    :boot_cmd_sequence => [ 
+      '<Tab><Spacebar><Tab><Tab><Tab><Spacebar>'
+    ],
 
     :ssh_login_timeout => "10000",
     # Actively attempt to winrm (no ssh on base windows) in for 10000 seconds
