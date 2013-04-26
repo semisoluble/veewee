@@ -52,7 +52,7 @@ module Veewee
           chunk_num = 0
           wget_vbs.each_line do |line|
             # escape WIN BATCH special chars
-            line.gsub!(/[(<|>)^]/).each{|m| "^#{m}"}
+            line.gsub!(/[(<|>)^']/).each{|m| "^#{m}"}
             # windows commands are limited to 2047 characters
             if((bootstrap_bat + [line]).join(" && ").size > 2047 )
               yield bootstrap_bat.join(" && "), chunk_num += 1
